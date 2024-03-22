@@ -1,2 +1,5 @@
-SELECT seq_id, station_name, boarding_time, passenger_number
-FROM subway_statistics;
+SELECT *
+    FROM subway_statistics
+WHERE station_name = '잠실(216)'
+    AND ( boarding_time = 7
+            OR boarding_time = 9 );
