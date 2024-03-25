@@ -1,4 +1,5 @@
-SELECT DISTINCT station_name
-  FROM subway_statistics
-WHERE gubun = '승차'
-ORDER BY 1;
+SELECT emp_id, emp_name, gender, age
+    FROM emp03
+UNION ALL
+SELECT emp_id2, emp_name2, gender, age
+    FROM emp08;
