@@ -1,6 +1,6 @@
-SELECT emp_id, emp_name, gender, age
+SELECT emp_name
     FROM emp03
-UNION ALL
-SELECT emp_id2, emp_name2, gender, age
+UNION
+SELECT emp_name2
     FROM emp08
-ORDER BY emp_id DESC;
+ORDER BY 1;
