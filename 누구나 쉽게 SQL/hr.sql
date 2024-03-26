@@ -1,6 +1,6 @@
-SELECT emp_name
-    FROM emp03
-MINUS
-SELECT emp_name2
-    FROM emp08
-ORDER BY 1;
+SELECT a.emp_id, a.emp_name, a.gender, a.age, a.dept_id,
+       b.dept_id, b.dept_name, b.use_yn
+  FROM emp_master a
+      ,dept_master b
+ WHERE a.dept_id = b.dept_id
+ ORDER BY a.emp_id;
