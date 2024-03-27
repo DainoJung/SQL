@@ -1,9 +1,8 @@
-SELECT a.emp_id
-      ,a.emp_name
-      ,a.gender
-      ,a.age
-      ,a.dept_id
-      ,( SELECT b.dept_name
-           FROM dept_master b
-          WHERE a.dept_id = b.dept_id ) dept_name
-FROM emp_master a;
+SELECT *
+  FROM emp_master a
+ WHERE ( a.gender, a.age) IN ( SELECT b.gender, b.age
+                                  FROM emp_master b
+                                      ,address_master c
+                                 WHERE b.address_id = c.address_id
+                                   AND c.gu IN ('중구', '서대문구')
+                              );
