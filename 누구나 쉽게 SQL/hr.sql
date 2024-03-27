@@ -1,8 +1,6 @@
 SELECT *
-  FROM emp_master a
- WHERE ( a.gender, a.age) IN ( SELECT b.gender, b.age
-                                  FROM emp_master b
-                                      ,address_master c
-                                 WHERE b.address_id = c.address_id
-                                   AND c.gu IN ('중구', '서대문구')
-                              );
+  FROM dept_master a      
+ WHERE a.dept_id NOT IN ( SELECT b.dept_id
+                            FROM emp_master b
+                           WHERE b.age BETWEEN 40 AND 49
+                        );	
