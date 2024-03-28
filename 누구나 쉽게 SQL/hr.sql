@@ -1,4 +1,6 @@
-DELETE FROM subway_dml_test
-WHERE station_name LIKE '종합운동장%';
+UPDATE subway_dml_test
+    SET passenger_number = passenger_number + 10
+        ,boarding_date   = ADD_MONTHS(boarding_date, 1)
+WHERE station_name LIKE '삼성%';
 
 COMMIT;
